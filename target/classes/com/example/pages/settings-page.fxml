@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171"
+      spacing="12" styleClass="tab-content">
+    <Label text="Settings" styleClass="section-title"/>
+
+    <VBox spacing="8" styleClass="stat-card">
+        <Label text="Default Encryption Algorithm" styleClass="label-soft"/>
+        <ComboBox fx:id="defaultAlgorithmComboBox" prefWidth="220" styleClass="algo-combo"/>
+    </VBox>
+
+    <!-- <VBox spacing="8" styleClass="stat-card">
+        <Label text="Theme" styleClass="label-soft"/>
+        <HBox spacing="16">
+            <CheckBox fx:id="darkModeCheckBox" text="Dark Mode" styleClass="toggle-check"/>
+            <CheckBox fx:id="lightModeCheckBox" text="Light Mode" styleClass="toggle-check"/>
+        </HBox>
+    </VBox> -->
+
+    <VBox spacing="8" styleClass="stat-card">
+        <Label text="Default Save Location" styleClass="label-soft"/>
+        <HBox spacing="8">
+            <TextField fx:id="saveLocationField" editable="false" HBox.hgrow="ALWAYS" styleClass="password-field settings-path-field"/>
+            <Button text="Choose Folder" onAction="#handleChooseSaveLocation" styleClass="secondary-button"/>
+        </HBox>
+    </VBox>
+
+    <VBox spacing="8" styleClass="stat-card">
+        <CheckBox fx:id="autoClearClipboardCheckBox" text="Auto-clear clipboard after copy" styleClass="toggle-check"/>
+        <HBox spacing="8">
+            <Label text="Maximum file size (MB):" styleClass="label-soft"/>
+            <TextField fx:id="maxFileSizeField" prefWidth="90" styleClass="password-field settings-size-field"/>
+        </HBox>
+    </VBox>
+
+    <HBox spacing="8">
+        <padding>
+            <Insets top="10" right="0" bottom="0" left="0"/>
+        </padding>
+        <Button text="Generate Secure Key" onAction="#handleGenerateSecureKey" styleClass="secondary-button"/>
+        <Label fx:id="generatedKeyLabel" text="Generated key will appear here" styleClass="label-soft"/>
+    </HBox>
+
+    <HBox spacing="8">
+        <Button text="Reset Settings" onAction="#handleResetSettings" styleClass="secondary-button"/>
+        <Button text="Save Settings" onAction="#handleSaveSettings" styleClass="primary-action-small"/>
+    </HBox>
+</VBox>

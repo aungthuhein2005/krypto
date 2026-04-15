@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171"
+      spacing="12" styleClass="tab-content">
+    <Label text="Decrypt File" styleClass="section-title"/>
+    <HBox spacing="20">
+        <VBox spacing="10" styleClass="drop-zone" onDragOver="#handleDecryptDragOver" onDragDropped="#handleDecryptDrop">
+            <Label text="Drop encrypted .enc file" styleClass="drop-title"/>
+            <Button text="Browse Encrypted File" onAction="#handleBrowseDecryptFile" styleClass="secondary-button"/>
+        </VBox>
+
+        <VBox spacing="8" HBox.hgrow="ALWAYS">
+            <HBox spacing="8" styleClass="file-chip">
+                <Label fx:id="decryptFileTypeLabel" text="ENC" styleClass="file-icon"/>
+                <VBox spacing="1">
+                    <Label fx:id="decryptFileNameLabel" text="No encrypted file selected" styleClass="file-name"/>
+                    <Label fx:id="decryptFileMetaLabel" text="0.0 MB • .enc" styleClass="file-meta"/>
+                </VBox>
+            </HBox>
+
+            <Label text="Password" styleClass="label-soft"/>
+            <HBox spacing="8">
+                <StackPane HBox.hgrow="ALWAYS">
+                    <PasswordField fx:id="decryptPasswordField" promptText="Enter decryption password" styleClass="password-field"/>
+                    <TextField fx:id="decryptPasswordVisibleField" visible="false" managed="false" promptText="Enter decryption password" styleClass="password-field"/>
+                </StackPane>
+                <CheckBox fx:id="showDecryptPasswordCheck" text="Show" styleClass="toggle-check"/>
+            </HBox>
+
+            <Button text="DECRYPT FILE" onAction="#handleDecrypt" maxWidth="1.7976931348623157E308" styleClass="primary-action"/>
+            <Label fx:id="decryptProgressLabel" text="Decrypting... 0%" styleClass="label-soft"/>
+            <ProgressBar fx:id="decryptionProgressBar" progress="0.0" maxWidth="1.7976931348623157E308" styleClass="progress-main"/>
+            <Label fx:id="decryptTimeLabel" text="Decryption completed • Time: --" styleClass="time-label"/>
+            <Label fx:id="decryptStatusLabel" text="Ready" styleClass="toast-info"/>
+        </VBox>
+    </HBox>
+</VBox>

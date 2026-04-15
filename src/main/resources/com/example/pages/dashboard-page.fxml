@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171"
+      spacing="14" styleClass="tab-content">
+    <Label text="Overview" styleClass="section-title"/>
+    <HBox spacing="12">
+        <VBox styleClass="stat-card" prefWidth="220">
+            <Label text="Total Encrypted" styleClass="stat-title"/>
+            <Label fx:id="totalEncryptedLabel" text="0" styleClass="stat-value"/>
+        </VBox>
+        <VBox styleClass="stat-card" prefWidth="220">
+            <Label text="Total Decrypted" styleClass="stat-title"/>
+            <Label fx:id="totalDecryptedLabel" text="0" styleClass="stat-value"/>
+        </VBox>
+        <VBox styleClass="stat-card" prefWidth="300">
+            <Label text="Last Activity" styleClass="stat-title"/>
+            <Label fx:id="lastActivityLabel" text="No activity yet" styleClass="stat-value-small"/>
+        </VBox>
+    </HBox>
+    <VBox styleClass="stat-card">
+        <Label text="Current Algorithm" styleClass="stat-title"/>
+        <Label fx:id="currentAlgorithmLabel" text="AES-256" styleClass="stat-value"/>
+        <Label text="Security profile: AES-256 + PBKDF2 + random IV" styleClass="label-soft"/>
+    </VBox>
+</VBox>
