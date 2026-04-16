@@ -3,6 +3,19 @@
 Krypto is a JavaFX desktop app for secure file encryption and decryption.
 It provides a modern UI with dashboard stats, encryption history, and configurable settings.
 
+## Demo
+
+- Video demo: [Watch on TikTok](https://www.tiktok.com/@aung_thu_hein_/video/7629012670762470677?is_from_webapp=1&sender_device=pc&web_id=7597371320158438930)
+
+
+## Download hosted installer:
+
+- [Krypto-1.0.exe (Google Drive)](https://drive.google.com/file/d/15wWYufpUkdt6Q5aBBHue3JNNU4M_-heR/view?usp=drive_link)
+
+## Infographic
+
+![Krypto infographic](assets/crypto_infographic.png)
+
 ## Features
 
 - Encrypt files using `AES-256` or `ChaCha20` (stored as `.enc`).
@@ -46,6 +59,7 @@ Output JAR:
 
 ## Build Windows Installer (.exe)
 
+
 ### Prerequisites
 
 - JDK with `jpackage` available
@@ -86,4 +100,7 @@ Installer output:
 
 ## License
 
-This project is for educational/assignment use. Add your preferred license if you plan to distribute publicly.
+Copyright (c) 2026 Aung Thu Hein. All rights reserved.
+
+This project is submitted as a Java course assignment.
+The source code may be reviewed for academic evaluation, but no permission is granted to copy, modify, distribute, or reuse this work without the author's consent.
